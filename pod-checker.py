@@ -9,7 +9,7 @@ def get_pending():
    v1 = client.CoreV1Api()
    results = []
 
-   pending_pods = v1.list_pod_for_all_namespaces(field_selector="status.phase=Running").items
+   pending_pods = v1.list_pod_for_all_namespaces(field_selector="status.phase=Pending").items
 
    for pod in pending_pods:
       pod_detail = {
