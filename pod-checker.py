@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 
 
 def get_pending():
-   config.load_kube_config()
+   config.load_incluster_config()
    v1 = client.CoreV1Api()
    results = []
 
