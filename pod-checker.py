@@ -2,6 +2,7 @@ from kubernetes import client, config
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import time
 
 
 def get_pending():
@@ -64,6 +65,31 @@ def send_email():
       print(f"Error sending email: {e}")
    finally:
       server.quit()
+
+send_email()
+write_to_file()
+
+time.sleep(10)
+
+send_email()
+write_to_file()
+
+time.sleep(10)
+
+send_email()
+write_to_file()
+
+time.sleep(10)
+
+send_email()
+write_to_file()
+
+time.sleep(10)
+
+send_email()
+write_to_file()
+
+time.sleep(10)
 
 send_email()
 write_to_file()
