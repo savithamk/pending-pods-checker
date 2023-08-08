@@ -21,6 +21,17 @@ def get_pending():
    return results
 
 
+def write_to_file():
+   file_path = "/data/pending-pods.log"
+   message = ""
+
+   for pod in get_pending():
+      message += f"Pod Name: {pod['Name']}\n"
+      message += f"Pending Since: {pod['Pending Since']}\n"
+
+   with open(file_path, "a+") as file:
+      file.write(message + "\n")
+
 def send_email():
    smtp_server = "smtp.gmail.com"
    smtp_port = 587
@@ -55,4 +66,5 @@ def send_email():
       server.quit()
 
 send_email()
+write_to_file()
 
